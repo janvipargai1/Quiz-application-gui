@@ -280,7 +280,7 @@ public class QuizPage {
 
     private List<Question> loadQuestions(String subject) {
         List<Question> questions = new ArrayList<>();
-        String fileName = "quiz-application-main\\OnlineQuiz\\resources/" + subject.toLowerCase() + "_questions.txt";
+        String fileName = "quiz-application-main\\OnlineQuiz\\resources\\" + subject.toLowerCase() + "_questions.txt";
 
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
             String line;
