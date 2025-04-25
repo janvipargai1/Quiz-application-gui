@@ -13,6 +13,8 @@ import java.util.List;
 import javax.swing.*;
 
 public class QuizPage {
+    private List<Integer> selectedOptions; // stores selected option index for each question
+
     private String username; 
     private JFrame frame;
     private List<Question> questions;
@@ -51,6 +53,9 @@ public class QuizPage {
 
         // Load questions for the quiz
         questions = loadQuestions(subject);
+        questions = loadQuestions(subject);
+selectedOptions = new ArrayList<>(Collections.nCopies(questions.size(), -1)); // -1 means not answered
+
 
         // Timer label
         timerLabel = new JLabel("Time Left: 08:00", SwingConstants.CENTER);
@@ -209,6 +214,8 @@ public class QuizPage {
                     break;
                 }
             }
+            selectedOptions.set(currentQuestionIndex, selectedOption);
+
 
             // Update the question status box color
             if (selectedOption != -1) {
@@ -309,6 +316,11 @@ public class QuizPage {
         for (int i = 0; i < 4; i++) {
             options[i].setText(optionsText[i]);
         }
+        int selectedOption = selectedOptions.get(currentQuestionIndex);
+    optionGroup.clearSelection();
+    if (selectedOption != -1) {
+        options[selectedOption].setSelected(true);
+    }
     }
 
     private void startTimer() {
