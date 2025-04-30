@@ -41,7 +41,7 @@ public class MainPage {
         gbcLabel.anchor = GridBagConstraints.CENTER; // Align content to the center
         gbcLabel.insets = new Insets(150, 0, 20, 0); // Add space at the top (adjust the '100' to move the labels down)
 
-        welcomeLabel = new JLabel("Welcome to QuizWhiz!!", JLabel.CENTER);
+        welcomeLabel = new JLabel("Welcome to KUIZU!!", JLabel.CENTER);
         welcomeLabel.setFont(new Font("Serif", Font.BOLD, 80));
         welcomeLabel.setForeground(Color.WHITE);
         welcomeLabel.setOpaque(false); // Make sure text is not covered by background
